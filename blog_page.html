@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Programming Blog</title>
+
+<style>
+  /* ---------- Global Styles ---------- */
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #1c1c1c;
+    color: #e0e0ff;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ---------- Sidebar Tabs ---------- */
+  .sidebar {
+    width: 230px;
+    background: #2a2a40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .sidebar h2 {
+    color: #b19cd9;
+    font-size: 1.4em;
+    margin-bottom: 30px;
+  }
+
+  .sidebar button {
+    background: transparent;
+    border: 2px solid #b19cd9;
+    color: #e0e0ff;
+    padding: 10px 18px;
+    margin: 8px 0;
+    border-radius: 30px;
+    width: 180px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+  }
+
+  .sidebar button:hover {
+    background: #b19cd9;
+    color: #1c1c1c;
+  }
+
+  .sidebar button.active {
+    background: #b19cd9;
+    color: #1c1c1c;
+  }
+
+  /* ---------- Main Content ---------- */
+  .content {
+    flex: 1;
+    padding: 40px;
+    display: none;
+    overflow-y: auto;
+    transition: 0.5s;
+  }
+
+  .content.active {
+    display: block;
+  }
+
+  h1, h2, h3 {
+    color: #b19cd9;
+  }
+
+  .about-section {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .about-section p {
+    line-height: 1.7;
+    color: #dcdcf8;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .card {
+    background: #2a2a40;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    width: 320px;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+  }
+
+  .card p {
+    color: #ccc;
+  }
+
+  pre {
+    background: #1f1f2f;
+    color: #e0e0ff;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+
+  footer {
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+    padding: 15px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2>My Blog</h2>
+  <button class="active" onclick="showTab('about')">About Me</button>
+  <button onclick="showTab('dbp')">DBP</button>
+  <button onclick="showTab('dsa')">DSA</button>
+  <button onclick="showTab('java')">Java</button>
+</div>
+
+<!-- About Me -->
+<div id="about" class="content active">
+  <div class="about-section">
+    <h1>About Me</h1>
+    <p>Hello! 👋 I'm <strong>Dnynesh Amrutkar</strong>, a passionate student and aspiring developer.  
+    I enjoy learning about programming, algorithms, and databases to build smart and efficient solutions.</p>
+    <p>💻 <strong>Skills:</strong> HTML, CSS, Java, Python, SQL, DSA</p>
+    <p>📚 <strong>Hobbies:</strong> Coding, Reading Tech Blogs, Exploring AI Tools</p>
+    <p>🎯 <strong>Goal:</strong> To become a full-stack developer and create impactful digital experiences.</p>
+  </div>
+  <footer>© 2025 My Programming Blog | Designed by Dnynesh Amrutkar</footer>
+</div>
+
+<!-- DBP -->
+<div id="dbp" class="content">
+  <h1>Database Programming (DBP)</h1>
+  <div class="card-container">
+    <div class="card">
+      <h2>What is DBP?</h2>
+      <p>Database Programming focuses on the creation, management, and interaction with databases using SQL and programming languages. It helps handle large volumes of data effectively.</p>
+    </div>
+
+    <div class="card">
+      <h2>Syntax Example</h2>
+      <pre>
+CREATE TABLE Students (
+  ID INT PRIMARY KEY,
+  Name VARCHAR(50),
+  Marks INT
+);
+      </pre>
+    </div>
+
+    <div class="card">
+      <h2>Uses</h2>
+      <p>Used in banking, e-commerce, education, and any application requiring data storage and retrieval.</p>
+    </div>
+
+    <div class="card">
+      <h2>Example Query</h2>
+      <pre>
+SELECT Name, Marks 
+FROM Students 
+WHERE Marks > 75;
+      </pre>
+    </div>
+  </div>
+</div>
+
+<!-- DSA -->
+<div id="dsa" class="content">
+  <h1>Data Structures & Algorithms (DSA)</h1>
+  <div class="card-container">
+    <div class="card">
+      <h2>Description</h2>
+      <p>DSA is the foundation of efficient programming. It organizes data logically and provides methods to process and retrieve it effectively.</p>
+    </div>
+
+    <div class="card">
+      <h2>Syntax Example</h2>
+      <pre>
+// Traversing an array in C
+#include &lt;stdio.h&gt;
+int main(){
+  int arr[5] = {10, 20, 30, 40, 50};
+  for(int i=0; i<5; i++)
+    printf("%d ", arr[i]);
+}
+      </pre>
+    </div>
+
+    <div class="card">
+      <h2>Use</h2>
+      <p>Used in operating systems, data management, and algorithm optimization — vital for coding interviews and software design.</p>
+    </div>
+
+    <div class="card">
+      <h2>Example</h2>
+      <pre>
+// Bubble Sort
+for(i=0; i<n-1; i++)
+  for(j=0; j<n-i-1; j++)
+    if(a[j] > a[j+1])
+      swap(a[j], a[j+1]);
+      </pre>
+    </div>
+  </div>
+</div>
+
+<!-- Java -->
+<div id="java" class="content">
+  <h1>Java Programming</h1>
+  <div class="card-container">
+    <div class="card">
+      <h2>What is Java?</h2>
+      <p>Java is a high-level, object-oriented language widely used for building applications from Android apps to enterprise systems.</p>
+    </div>
+
+    <div class="card">
+      <h2>Syntax</h2>
+      <pre>
+class Hello {
+  public static void main(String[] args){
+    System.out.println("Hello, Java!");
+  }
+}
+      </pre>
+    </div>
+
+    <div class="card">
+      <h2>Use</h2>
+      <p>Used in web apps, Android development, and backend systems like Spring Boot. Known for reliability and platform independence.</p>
+    </div>
+
+    <div class="card">
+      <h2>Example Program</h2>
+      <pre>
+class Student {
+  String name = "Dnynesh";
+  void display(){
+    System.out.println("Name: " + name);
+  }
+  public static void main(String[] args){
+    Student s = new Student();
+    s.display();
+  }
+}
+      </pre>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showTab(tabId) {
+    const contents = document.querySelectorAll(".content");
+    const buttons = document.querySelectorAll(".sidebar button");
+
+    contents.forEach((content) => content.classList.remove("active"));
+    buttons.forEach((btn) => btn.classList.remove("active"));
+
+    document.getElementById(tabId).classList.add("active");
+    event.target.classList.add("active");
+  }
+</script>
+
+</body>
+</html>
